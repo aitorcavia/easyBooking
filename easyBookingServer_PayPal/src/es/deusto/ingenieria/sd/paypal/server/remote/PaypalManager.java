@@ -12,19 +12,15 @@ public class PaypalManager extends UnicastRemoteObject implements IPaypalManager
 		this.serverName = args[2];
 
 	}
-	@Override
-	public void newPayMent(String Concepto, double pay)  {
-		System.out.println("  * Details for paypal on the server ... '" + Concepto + "' and '" + pay + "'");
-		
-	}
-	@Override
-	public void sendPayment(String Concepto, double pay)  {
-		System.out.println("  * New message on the server ... '" + Concepto + "' and '" + pay + "'");
-		
-	}
+
 	
 	public String getName() {
 		return serverName;
+	}
+	@Override
+	public void pay(double pay) throws RemoteException {
+		System.out.println("  * Nuevo pago en el servidor ... '" + pay + "€");
+		
 	}
 	
 }

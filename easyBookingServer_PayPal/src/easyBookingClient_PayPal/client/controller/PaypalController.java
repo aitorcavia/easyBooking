@@ -4,15 +4,15 @@ import java.rmi.RemoteException;
 
 
 import easyBookingClient_PayPal.client.gui.SwitchServerGUI;
-import easyBookingClient_PayPal.client.remote.RMIServiceLocator;
+import easyBookingClient_PayPal.client.remote.GatewayServiceLocator;
 
 public class PaypalController {
 
-private RMIServiceLocator rsl;
+private GatewayServiceLocator rsl;
 	
 	public PaypalController(String[] args) {
 		//Create RMI Service Locator
-		this.rsl = new RMIServiceLocator();
+		this.rsl = new GatewayServiceLocator();
 		//Invoque 'setService' to lookup Remote Service
 		this.rsl.setService(args[0], args[1], args[2]);
 
@@ -20,49 +20,23 @@ private RMIServiceLocator rsl;
 		new SwitchServerGUI(this);
 	}
 	
-    public void newPayment(String Concepto, double pay ){
+    public void newPayment(double pay ){
     	try {
     		//Invoque 'newPayment' using RMI Service Locator
-    		this.rsl.getService().newPayMent(Concepto, pay);    		
+    		this.rsl.getService().pay(pay);    		
     	} catch (Exception e){
-    		System.err.println("$ Error sending new payment: " + e.getMessage());
+    		System.err.println("$ Error con el pago: " + e.getMessage());
     	}
     }
     
-    public void sendPayment(String Concepto, double	 pay){
-    	try{
-    		//Invoque 'receivePayment' using RMI Service Locator
-    		this.rsl.getService().sendPayment(Concepto, pay);    		
-    	} catch(Exception e){
-    		System.out.println("$ Error receiving: " + e.getMessage());
-    	}
-    }	
-	
+   
 	public void switchServer(String ip, String port, String name) {
 		//Invoque 'setService' to lookup Remote Service
 		this.rsl.setService(ip, port, name);
 		System.out.println("- Switching to server: //" + ip + ":" + port + "/" + name);
 	}
 	  
-    public void closeTVProgram() {
-    	//This method will be use in other Labs.
-    }
-    
-    public void addMaximumNumberMessagesRestriction() {
-    	//This method will be use in other Labs.
-    }
-    
-    public void addPermittedOptionsRestriction() {
-    	//This method will be use in other Labs.
-    }
 
-    public void addForbiddenWordsRestriction() {
-    	//This method will be use in other Labs.
-    }
-
-    public void generateReport() {
-    	//This method will be use in other Labs.
-    }
     
     public void exit(){
     	System.exit(0);

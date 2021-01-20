@@ -2,11 +2,11 @@ package easyBookingClient_PayPal.client.remote;
 
 import es.deusto.ingenieria.sd.paypal.server.remote.IPaypalManager;
 
-public class RMIServiceLocator {
+public class GatewayServiceLocator {
 	private IPaypalManager service = null;
 
     /** Creates a new instance of RMIServiceLocator */
-    public RMIServiceLocator() {
+    public GatewayServiceLocator() {
     	//This code enables RMI Security Manager
     	if (System.getSecurityManager() == null) {
 			System.setSecurityManager(new SecurityManager());
