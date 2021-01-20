@@ -10,10 +10,7 @@ public interface IAmeAirlinesManager extends Remote{
 	
 
 	
-	 public static  void buscarVuelos(String origen,String destino ){
-		 
-	 }
-
+	 public void buscarVuelos(String origen,String destino);
 	
 }
 	

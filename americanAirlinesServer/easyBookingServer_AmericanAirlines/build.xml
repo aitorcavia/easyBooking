@@ -31,11 +31,11 @@
 	<target name="2.export" depends="1.build" description="Export classes into a .jar file">
 		<delete dir="${dist.dir}"/>
 		<mkdir dir="${dist.dir}"/>
-		<jar destfile="${dist.dir}/${export.file}" basedir="${build.dir}" includes="**/ITVProgramManager.class"/>
+		<jar destfile="${dist.dir}/${export.file}" basedir="${build.dir}" includes="**/IAmeAirlines.class"/>
 	</target>
 
 	<target name="3.vodafone.server" depends="1.build" description="Runs Vodafone Server">
-		<java classname="es.deusto.ingenieria.sd.AmericanAirlines.server.PaypalManagerServer" classpathref="classpath" fork="true">
+		<java classname="es.deusto.ingenieria.sd.AmericanAirlines.server.AmeAirlinesManagerServer" classpathref="classpath" fork="true">
         	<jvmarg value="-Djava.rmi.server.codebase=file:${build.dir}/"/>
 			<jvmarg value="-Djava.security.policy=${policy.file}"/>			
         	<arg value="${rmiregistry.IP}"/> 
@@ -49,7 +49,7 @@
     </target>
 	
 	<target name="3.movistar.server" depends="1.build" description="Runs Movistar Server">
-		<java classname="es.deusto.ingenieria.sd.AmericanAirlines.server.PaypalManagerServer" classpathref="classpath" fork="true">
+		<java classname="es.deusto.ingenieria.sd.AmericanAirlines.server.AmeAirlinesManagerServer" classpathref="classpath" fork="true">
         	<jvmarg value="-Djava.rmi.server.codebase=file:${build.dir}/"/>
 			<jvmarg value="-Djava.security.policy=${policy.file}"/>			
         	<arg value="${rmiregistry.IP}"/> 

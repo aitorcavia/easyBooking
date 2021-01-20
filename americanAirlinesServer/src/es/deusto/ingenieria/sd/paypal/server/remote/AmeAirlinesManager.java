@@ -5,6 +5,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import easyBookingClient_AmericanAirlines.client.data.AmeAirlines;
+import es.deusto.ingenieria.sd.auctions.server.services.EntityDataService;
 
 public class AmeAirlinesManager extends UnicastRemoteObject implements IAmeAirlinesManager{
 
@@ -16,7 +17,8 @@ public class AmeAirlinesManager extends UnicastRemoteObject implements IAmeAirli
 
 	}
 	 public void buscarVuelos(String origen,String destino ){
-
+	System.out.println(" * buscar vuelos por origen y destino:" + origen + ", " +  destino);
+			return EntityDataService.getInstance().buscarVuelo(origen, destino);
 		
 	}
 	
