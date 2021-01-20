@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!DOCTYPE orm PUBLIC 
+	"-//Sun Microsystems, Inc.//DTD Java Data Objects Metadata 2.0//EN"
+	"http://java.sun.com/dtd/orm_2_0.dtd">
+<orm>
+    <package name="objects">
+    
+        <class name="Aerolinea">
+            <field name="cod">
+                <column length="32" jdbc-type="VARCHAR"/>
+            </field>
+			<field name="nombre">
+                <column length="32" jdbc-type="VARCHAR"/>
+            </field>
+        </class>
+        
+        <class name="Aeropuerto">
+            <field name="cod">
+                <column length="32" jdbc-type="VARCHAR"/>
+            </field>
+			<field name="nombre">
+                <column length="32" jdbc-type="VARCHAR"/>
+            </field>
+            <field name="localidad">
+                <column length="32" jdbc-type="VARCHAR"/>
+            </field>
+            <field name="capacidad">
+                <column length="32" jdbc-type="INTEGER"/>
+            </field>
+        </class>
+        
+        <class name="Credit_card">
+        </class>
+        
+         <class name="Metodo_pago">
+        </class>
+        
+        
+        <class name="Pago">
+            <field name="fecha">
+                <column length="32" jdbc-type="INTEGER"/>
+            </field>
+			<field name="importe">
+                <column length="32" jdbc-type="DOUBLE"/>
+            </field>
+         
+        </class>
+        
+        <class name="Paypal">
+            <field name="email">
+                <column length="32" jdbc-type="VARCHAR"/>
+            </field>
+			<field name="usuario">
+                <column length="32" jdbc-type="VARCHAR"/>
+            </field>
+        </class>
+        
+        <class name="Reserva">
+            <field name="fecha">
+                <column length="32" jdbc-type="INTEGER"/>
+            </field>
+			<field name="importe">
+                <column length="32" jdbc-type="DOUBLE"/>
+            </field>
+            <field name="num_pasajeros">
+                <column length="32" jdbc-type="INTEGER"/>
+            </field>
+            <field name="pasajero">
+            </field>
+            <field name="vuelo">
+            </field>
+            <field name="pago">
+            </field>
+        </class>
+        
+        <class name="Usuario">
+            <field name="correo">
+                <column length="32" jdbc-type="VARCHAR"/>
+            </field>
+			<field name="cod_aeropuerto_pred">
+                <column length="32" jdbc-type="INTEGER"/>
+            </field>
+            <field name="nom_usuario">
+                <column length="32" jdbc-type="VARCHAR"/>
+        </class>
+        
+        <class name="Vuelo">
+            <field name="cod">
+                <column length="32" jdbc-type="VARCHAR"/>
+            </field>
+			<field name="fechaSalida">
+                <column length="32" jdbc-type="INTEGER"/>
+            </field>
+            <field name="fechaLlegada">
+                <column length="32" jdbc-type="INTEGER"/>
+            </field>
+            <field name="asientosTot">
+                <column length="32" jdbc-type="INTEGER"/>
+            </field>
+            <field name="asientosRes">
+                <column length="32" jdbc-type="INTEGER"/>
+            </field>
+            <field name="precio">
+                <column length="32" jdbc-type="DOUBLE"/>
+            </field>
+            <field name="aeropuerto_destino">
+            </field>
+            <field name="aeropuerto_origen">
+            </field>
+            <field name="tipo">
+            </field>
+        </class>
+        
+        
+        
+  
+	
+    </package>
+</orm>
