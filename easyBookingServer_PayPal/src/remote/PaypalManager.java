@@ -1,4 +1,4 @@
-package es.deusto.ingenieria.sd.paypal.server.remote;
+package remote;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

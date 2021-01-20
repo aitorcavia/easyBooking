@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 
-import data.Vuelo;
+import es.deusto.ingenieria.sd.auctions.server.data.Vuelo;
 
 public class IberiaGateway implements IAerolineasGateway {
 
@@ -20,7 +20,7 @@ public class IberiaGateway implements IAerolineasGateway {
 		this.port = port;
 	}
 
-	public ArrayList<Vuelo> buscarVuelos(String origen, String destino) {
+	public ArrayList<Vuelo> buscarVuelo(String origen, String destino) {
 		ArrayList<Vuelo> vuelos = new ArrayList<Vuelo>();
 		String message = null;
 		try (Socket tcpSocket = new Socket(ip, port);
@@ -39,7 +39,7 @@ public class IberiaGateway implements IAerolineasGateway {
 			System.out.println(" - TCPSocketClient: Received data from '" + tcpSocket.getInetAddress().getHostAddress()
 					+ ":" + tcpSocket.getPort() + "' -> '" + data + "'");
 			for (Vuelo vuelo : vuelos) {
-				if(vuelo.getOrigen().equals(origen) && vuelo.getDestino().equals(destino)){
+				if(vuelo.getAeropuerto_origen().equals(origen) && vuelo.getAeropuerto_destino().equals(destino)){
 					vuelos.add(vuelo);
 				}
 			}
@@ -52,6 +52,8 @@ public class IberiaGateway implements IAerolineasGateway {
 		}
 		return vuelos;
 	}
+
+	
 	
 	
 }

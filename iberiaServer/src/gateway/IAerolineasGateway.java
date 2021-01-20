@@ -2,7 +2,7 @@ package gateway;
 
 import java.util.ArrayList;
 
-import data.Vuelo;
+import es.deusto.ingenieria.sd.auctions.server.data.Vuelo;
 
 public interface IAerolineasGateway {
 

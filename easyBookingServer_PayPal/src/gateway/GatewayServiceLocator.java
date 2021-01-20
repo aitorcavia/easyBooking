@@ -1,6 +1,6 @@
-package easyBookingClient_PayPal.client.remote;
+package gateway;
 
-import es.deusto.ingenieria.sd.paypal.server.remote.IPaypalManager;
+import remote.IPaypalManager;
 
 public class GatewayServiceLocator {
 	private IPaypalManager service = null;

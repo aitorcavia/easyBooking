@@ -1,9 +1,9 @@
-package es.deusto.ingenieria.sd.paypal.server;
+package server;
 
 import java.rmi.Naming;
 
-import es.deusto.ingenieria.sd.paypal.server.remote.IPaypalManager;
-import es.deusto.ingenieria.sd.paypal.server.remote.PaypalManager;
+import remote.IPaypalManager;
+import remote.PaypalManager;
 
 public class PaypalManagerServer {
 	public static void main(String[] args) {

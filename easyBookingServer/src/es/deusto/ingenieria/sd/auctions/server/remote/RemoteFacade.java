@@ -43,9 +43,8 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	public boolean register(String email, String username, String pass) throws RemoteException {
 		System.out.println(" * RemoteFaçade register: " + email + " / " + pass);
 		Usuario user = new Usuario(email, null, username, pass);
-		DBManager.getInstance().storeUsuario(user);
-		//	this.state = LoginService.getInstance().login(email, password);		
-		return state != null;
+		DBManager.getInstance().storeUsuario(user);	
+		return true;
 	}
 	
 	public List<VueloDTO> buscarVuelos() throws RemoteException{
