@@ -18,12 +18,12 @@ public class AmeAirlinesManagerServer {
 		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 
 		try {
-			IAmeAirlinesManager PayPalServer = new AmeAirlinesManager(args);
+			IAmeAirlinesManager AmeAirlinesServer = new AmeAirlinesManager(args);
 			
-			Naming.rebind(name, PayPalServer);
-			System.out.println("- PaypalManager '" + name + "' active and waiting...");
+			Naming.rebind(name, AmeAirlinesServer);
+			System.out.println("- AmericanAirlinesManager '" + name + "' active and waiting...");
 		} catch (Exception e) {
-			System.err.println("$ PaypalManager exception: " + e.getMessage());
+			System.err.println("$ AmericanAirlinesManager exception: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}

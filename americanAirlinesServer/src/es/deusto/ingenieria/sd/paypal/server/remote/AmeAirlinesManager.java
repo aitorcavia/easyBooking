@@ -2,6 +2,9 @@ package es.deusto.ingenieria.sd.paypal.server.remote;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
+
+import easyBookingClient_AmericanAirlines.client.data.AmeAirlines;
 
 public class AmeAirlinesManager extends UnicastRemoteObject implements IAmeAirlinesManager{
 
@@ -12,14 +15,8 @@ public class AmeAirlinesManager extends UnicastRemoteObject implements IAmeAirli
 		this.serverName = args[2];
 
 	}
-	@Override
-	public void newPayMent(String Concepto, double pay)  {
-		System.out.println("  * Details for paypal on the server ... '" + Concepto + "' and '" + pay + "'");
-		
-	}
-	@Override
-	public void sendPayment(String Concepto, double pay)  {
-		System.out.println("  * New message on the server ... '" + Concepto + "' and '" + pay + "'");
+	 public void buscarVuelos(String origen,String destino ){
+
 		
 	}
 	

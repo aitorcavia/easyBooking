@@ -12,6 +12,7 @@ public class RMIServiceLocator {
 			System.setSecurityManager(new SecurityManager());
 		}
     }
+	
 
     public void setService(String ip, String port, String serviceName) {
 		//Name for looking for the server using RMIRegistry
