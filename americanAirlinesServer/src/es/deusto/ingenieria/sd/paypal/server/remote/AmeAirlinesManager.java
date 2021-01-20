@@ -18,7 +18,7 @@ public class AmeAirlinesManager extends UnicastRemoteObject implements IAmeAirli
 	}
 	 public void buscarVuelos(String origen,String destino ){
 	System.out.println(" * buscar vuelos por origen y destino:" + origen + ", " +  destino);
-			return EntityDataService.getInstance().buscarVuelo(origen, destino);
+			//return EntityDataService.getInstance().buscarVuelo(origen, destino);
 		
 	}
 	
